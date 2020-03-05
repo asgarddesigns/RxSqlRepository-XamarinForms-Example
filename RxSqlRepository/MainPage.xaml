@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RxSqlRepository"
+             x:Class="RxSqlRepository.MainPage" Padding="10,40, 10, 20">
+
+    <StackLayout Orientation="Vertical">
+        <!-- Place new controls here -->
+        <Label Text="Rx Repository Demo!"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start" />
+        <ListView ItemsSource="{Binding BeerItems}" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Label
+                            Text="{Binding Name}"
+                            FontAttributes="Bold" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Button Text="Add Beer" Command="{Binding AddBeerCommand}" />
+    </StackLayout>
+
+</ContentPage>
